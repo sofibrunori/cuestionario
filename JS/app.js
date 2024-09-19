@@ -26,22 +26,22 @@ const phoebeCaracteristicas = ["Excéntrica y creativa", "Espiritual y en contac
 
 
 const mostrarResultado = () => {
-    if (resultado <= 10 && resultado >= 20 ) {
+    if (resultado >= 10 && resultado < 20 ) {
         alert ("Tu personaje es Ross")
         console.log(rossCaracteristicas)
-    } else if (resultado <= 20 && resultado >= 30) {
+    } else if (resultado >= 20 && resultado < 30) {
         alert ("Tu personaje es Rachel")
         console.log(rachelCaracteristicas)
-    } else if (resultado <= 30 && resultado >= 40) {
+    } else if (resultado >= 30 && resultado < 40) {
         alert ("Tu personaje es Monica")
         console.log(monicaCaracteristicas)
-    } else if (resultado <= 40 && resultado >= 50) {
+    } else if (resultado >= 40 && resultado < 50) {
         alert ("Tu personaje es Chandler")
         console.log(chandlerCaracteristicas)
-    } else if (resultado <= 50 && resultado >= 60) {
+    } else if (resultado >= 50 && resultado < 60) {
         alert ("Tu personaje es Joey")
         console.log(joeyCaracteristicas)
-    } else if (resultado <= 60) {
+    } else if (resultado >= 60) {
         alert ("Tu personaje es Phoebe")
         console.log(phoebeCaracteristicas)
     }
@@ -53,13 +53,15 @@ const repetir = () => {
     if (repetir === true) {
         resultado = 0
         preguntas()
+        mostrarResultado()
+        repetir()
     } else if (repetir === false) {
         alert ("Gracias por realizar este cuestionario")
     }
 }
 
 const preguntas = () => {
-    alert("¡Bienvenido/a a la Encuesta Qué personaje de Friends eres!\n Responde a 10 preguntas rápidas para descubrir a cuál de los personajes de Friends te pareces más: Ross, Rachel, Monica, Chandler, Joey o Phoebe. ¡Diviértete respondiendo y descubre tu resultado al final!") 
+    alert("¡Bienvenido/a a la Encuesta Qué personaje de Friends eres!\n Responde a 10 preguntas rápidas para descubrir a cuál de los personajes de Friends te pareces más: Ross, Rachel, Monica, Chandler, Joey o Phoebe. ¡Diviértete respondiendo y descubre tu resultado al final!\n(Para responder el cuestionario, escribe en el espacio la letra de la opción correspondiente)") 
 
     let pregunta1 = prompt("¿Qué haces en una situación de conflicto?\n A: Trato de explicar mi punto de vista de manera lógica.\n B: Me siento frustrado/a pero trato de ser paciente.\n C: Me aseguro de que todo esté en orden y organizado.\n D: Utilizo el humor para calmar la situación.\n E: Evito la confrontación y trato de ser amigable con todos.\n F: Sigo mis instintos y hago lo que me parece mejor.").toLowerCase()
     sumaResultados(pregunta1)
